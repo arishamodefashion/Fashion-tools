@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="description" content="Curated directory of AI tools for fashion design, virtual try-ons, trend forecasting, and garment simulation. Powered by Lakeviya.">
+<title>Fashion AI Tools | Lakeviya</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #f5f7fc;
+    color: #1e2a3e;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  .bg-ambient {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    background: linear-gradient(145deg, #f0f4fa 0%, #e9eef5 100%);
+  }
+
+  .glow-orb {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(70px);
+    opacity: 0.2;
+    animation: floatGlow 24s infinite alternate ease-in-out;
+    z-index: -1;
+    pointer-events: none;
+  }
+  .orb1 { width: 50vw; height: 50vw; background: #b9c8e8; top: -20vh; left: -15vw; animation-duration: 30s; }
+  .orb2 { width: 55vw; height: 55vw; background: #cfddee; bottom: -25vh; right: -20vw; animation-duration: 34s; animation-direction: alternate-reverse; }
+  .orb3 { width: 40vw; height: 40vw; background: #e2e9f3; top: 40vh; left: 70vw; opacity: 0.15; animation-duration: 38s; }
+
+  @keyframes floatGlow {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(4%, 6%) scale(1.1); }
+  }
+
+  .lakeviya-watermark {
+    position: fixed;
+    bottom: 18px;
+    right: 22px;
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: #94a3b8;
+    font-family: monospace;
+    letter-spacing: 1px;
+    user-select: none;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .particle-3d {
+    position: fixed;
+    pointer-events: none;
+    z-index: -1;
+    inset: 0;
+    overflow: hidden;
+  }
+  .particle {
+    position: absolute;
+    background: radial-gradient(circle, rgba(100, 116, 139, 0.12), transparent);
+    border-radius: 50%;
+    filter: blur(4px);
+    animation: particleFloat 16s infinite linear;
+    will-change: transform;
+  }
+  @keyframes particleFloat {
+    0% { transform: translateY(0) translateX(0) scale(1); opacity: 0; }
+    15% { opacity: 0.3; }
+    85% { opacity: 0.1; }
+    100% { transform: translateY(-110vh) translateX(12px) scale(0); opacity: 0; }
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+    padding: 1rem 1rem 1.5rem;
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: 1.2rem;
+  }
+  .glow-text {
+    font-size: 1.8rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #1f3a5f, #2c4c6e);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: -0.02em;
+  }
+  .subtitle {
+    font-size: 0.65rem;
+    color: #5b6e8c;
+    margin-top: 4px;
+    font-weight: 500;
+  }
+
+  .search-wrapper {
+    max-width: 280px;
+    margin: 0 auto 1.2rem auto;
+  }
+  .search-input {
+    width: 100%;
+    padding: 8px 18px;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 60px;
+    color: #1e293b;
+    font-size: 0.8rem;
+    outline: none;
+    transition: all 0.2s;
+    text-align: center;
+    font-weight: 500;
+  }
+  .search-input:focus {
+    border-color: #5b8cbb;
+    box-shadow: 0 0 0 3px rgba(91, 140, 187, 0.15);
+  }
+
+  .stats-bar {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 1.2rem;
+    font-size: 0.65rem;
+    color: #52718e;
+    font-weight: 500;
+  }
+
+  .tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(195px, 1fr));
+    gap: 0.85rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .card {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 0.7rem 0.75rem;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+  }
+  .card:hover {
+    transform: translateY(-2px);
+    border-color: #cbdff2;
+    box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.05);
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 5px;
+  }
+  .card-icon {
+    width: 32px;
+    height: 32px;
+    background: #f1f5f9;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    border: 1px solid #e2edf7;
+  }
+  .card-name {
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: #1e3a5f;
+    line-height: 1.2;
+  }
+  .card-purpose {
+    font-size: 0.63rem;
+    color: #405d7c;
+    line-height: 1.35;
+    margin-top: 5px;
+    padding: 4px 6px;
+    background: #f8fafc;
+    border-radius: 12px;
+    border-left: 2px solid #8fb0d0;
+  }
+  .card-tutorial {
+    margin-top: 8px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .learn-btn {
+    background: #eef3fc;
+    padding: 3px 10px;
+    border-radius: 40px;
+    font-size: 0.6rem;
+    font-weight: 600;
+    color: #2c5a8c;
+    border: 1px solid #cfe2f5;
+    cursor: pointer;
+    transition: 0.15s;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .learn-btn:hover {
+    background: #e2edfa;
+    border-color: #b9d0e7;
+  }
+
+  .simple-popup {
+    position: fixed;
+    z-index: 20000;
+    background: #ffffff;
+    border-radius: 16px;
+    border: 1px solid #cbd5e1;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+    width: 165px;
+    padding: 4px 0;
+    animation: fadeScale 0.16s ease;
+  }
+  @keyframes fadeScale {
+    from { opacity: 0; transform: scale(0.96); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  .popup-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    font-size: 0.7rem;
+    color: #2c3e5c;
+    cursor: pointer;
+    transition: background 0.12s;
+    border-radius: 10px;
+    margin: 2px 4px;
+  }
+  .popup-item:hover {
+    background: #f0f4fa;
+  }
+
+  .footer-3d {
+    text-align: center;
+    margin-top: 1.2rem;
+    padding: 0.4rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #ffffffdd;
+    backdrop-filter: blur(4px);
+    border-radius: 50px;
+    border: 1px solid #e2e8f0;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .founder-img {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid #8fb0d0;
+    object-fit: cover;
+  }
+  .founder-name { color: #2c5a8c; font-size: 0.65rem; font-weight: 600; }
+  .funded-by { color: #4f7ea3; font-size: 0.6rem; font-weight: 500; }
+
+  .empty-3d {
+    text-align: center;
+    padding: 1.8rem;
+    background: #ffffffcc;
+    border-radius: 24px;
+    color: #5a6e88;
+    font-size: 0.85rem;
+    border: 1px solid #e9eef3;
+  }
+
+  .cursor-3d { display: none; }
+
+  @media (max-width: 700px) {
+    .container { padding: 0.8rem; }
+    .glow-text { font-size: 1.5rem; }
+    .tools-grid { grid-template-columns: 1fr; gap: 0.7rem; }
+    .card { padding: 0.6rem; }
+    .simple-popup { width: 150px; }
+    .footer-3d { gap: 5px; flex-wrap: wrap; }
+  }
+</style>
+</head>
+<body>
+
+<div class="bg-ambient"></div>
+<div class="glow-orb orb1"></div>
+<div class="glow-orb orb2"></div>
+<div class="glow-orb orb3"></div>
+<div class="lakeviya-watermark">LAKEVIYA</div>
+<div class="particle-3d" id="particleContainer"></div>
+
+<div class="container">
+  <div class="header">
+    <div class="glow-text">✨ Fashion AI Tools</div>
+    <div class="subtitle">⚡ all important tool for industry</div>
+  </div>
+  <div class="search-wrapper">
+    <input type="text" id="search" class="search-input" placeholder="🔍 Search tools... (press /)">
+  </div>
+  <div class="stats-bar" id="statsBar">
+    <span>🤖 AI-powered fashion</span>
+    <span>⚡ Virtual try-on • 3D design</span>
+  </div>
+
+  <div id="toolsContainer"></div>
+
+  <div class="footer-3d">
+    <img src="https://res.cloudinary.com/ddlc9pfgn/image/upload/v1775854808/IMG_9102_ckumgw.jpg" alt="founder Vijay Kumar" class="founder-img" onerror="this.src='https://ui-avatars.com/api/?background=8fb0d0&color=fff&name=VK'">
+    <span class="founder-name">Vijay kumar</span>
+    <span style="color:#9aaebf;">✦</span>
+    <span class="funded-by">💎Funded by Lakeviya</span>
+  </div>
+</div>
+
+<script>
+// ========== FASHION AI + TREND + BUSINESS TOOLS ==========
+const fashionTools = [
+  { name: "Vue.ai", url: "https://vue.ai", icon: "👗", purpose: "AI for fashion retail: virtual try-on, styling, product recommendations." },
+  { name: "CLO 3D", url: "https://www.clo3d.com", icon: "🧥", purpose: "3D garment design & simulation — used by top fashion brands." },
+  { name: "StyleGAN (Fashion)", url: "https://github.com/NVlabs/stylegan", icon: "🎭", purpose: "Generate new clothing designs using generative AI." },
+  { name: "Zalando Research", url: "https://github.com/zalandoresearch", icon: "👚", purpose: "Open-source fashion AI: outfit generation, compatibility." },
+  { name: "Stitch Fix Algorithms", url: "https://multithreaded.stitchfix.com", icon: "📦", purpose: "Personal styling & size recommendation AI." },
+  { name: "Reface (Fashion)", url: "https://reface.ai", icon: "✨", purpose: "AI virtual try-on for clothes and accessories." },
+  { name: "Zeelool Virtual Try-On", url: "https://www.zeelool.com", icon: "🕶️", purpose: "AI based eyewear & accessory try-on." },
+  { name: "Sewport AI", url: "https://sewport.com", icon: "🧵", purpose: "AI fashion design & clothing manufacturing assistant." },
+  { name: "Fashable", url: "https://fashable.ai", icon: "👠", purpose: "AI trend forecasting & fashion analytics." },
+  { name: "Pixite (Fashion)", url: "https://pixite.ai", icon: "🎨", purpose: "Generate unique patterns & textile designs." },
+  { name: "VTON (Virtual Try-On)", url: "https://github.com/ternaus/Virtual-Try-On", icon: "👔", purpose: "Open-source virtual clothing try-on." },
+  { name: "Mei.AI", url: "https://mei.ai", icon: "💅", purpose: "AI personal shopper & style assistant." },
+  { name: "Lumiere (Google)", url: "https://lumiere-video.github.io", icon: "📽️", purpose: "AI video generation — apply to fashion lookbooks." },
+  { name: "Fashionpedia (CV)", url: "https://fashionpedia.github.io", icon: "📸", purpose: "Dataset & models for fashion item detection." },
+  { name: "Lefty (AI Stylist)", url: "https://lefty.ai", icon: "👖", purpose: "AI curates daily outfits based on weather & taste." },
+  { name: "Cala", url: "https://ca.la", icon: "👜", purpose: "AI-powered fashion design & on-demand manufacturing." },
+  { name: "Style.ai", url: "https://style.ai", icon: "👒", purpose: "AI outfit recommendations from your existing wardrobe." },
+  { name: "The Fabricant", url: "https://www.thefabricant.com", icon: "✨", purpose: "Digital fashion & NFT clothing using AI." },
+  // NEW ADDITIONS (fashion trend, business, analysis platforms)
+  { name: "Vogue Runway", url: "https://www.vogue.com/fashion-shows", icon: "📰", purpose: "Runway shows, collections, fashion week coverage & trends." },
+  { name: "ShowStudio", url: "https://www.showstudio.com", icon: "🎬", purpose: "Fashion film, creative content, and behind-the-scenes." },
+  { name: "Tag-Walk", url: "https://tag-walk.com", icon: "🏷️", purpose: "Street style & global fashion trends from influencers." },
+  { name: "Business of Fashion", url: "https://www.businessoffashion.com", icon: "📈", purpose: "Fashion industry news, analysis, and career insights." },
+  { name: "WWD", url: "https://wwd.com", icon: "🗞️", purpose: "Women's Wear Daily: fashion, retail, and beauty business news." },
+  { name: "WGSN", url: "https://www.wgsn.com", icon: "🔮", purpose: "Global trend forecasting & consumer insights for fashion." },
+  { name: "Edelkoort", url: "https://www.edelkoort.com", icon: "🎨", purpose: "Trend forecasting & design consultancy by Lidewij Edelkoort." },
+  { name: "Fashion United", url: "https://fashionunited.com", icon: "🌍", purpose: "International fashion news, jobs, and market data." },
+  { name: "Trendalytics", url: "https://trendalytics.co", icon: "📊", purpose: "Predictive analytics for fashion & beauty trends." },
+  { name: "Hypebae", url: "https://hypebae.com", icon: "👟", purpose: "Streetwear, sneakers, and youth fashion culture." },
+  { name: "Stylumia", url: "https://stylumia.ai", icon: "🤖", purpose: "AI-driven demand forecasting & trend intelligence." },
+  { name: "Launchmetrics", url: "https://www.launchmetrics.com", icon: "📡", purpose: "Fashion brand performance & influencer marketing analytics." },
+  { name: "Trendstop", url: "https://www.trendstop.com", icon: "⚡", purpose: "Short & long-term fashion trend forecasting." },
+  { name: "POP Fashion", url: "https://www.popfashioninfo.com", icon: "📱", purpose: "Data-driven fashion trend reports & retail insights." },
+  { name: "F-Trend", url: "https://www.f-trend.com", icon: "📉", purpose: "Fashion trend analysis & forecasting platform." },
+  { name: "FIT NYC", url: "https://www.fitnyc.edu", icon: "🎓", purpose: "Fashion Institute of Technology – research & education." },
+  { name: "TFashion AI", url: "https://tfashion.ai", icon: "🧠", purpose: "AI for fashion design & trend prediction." },
+  { name: "ModaCable", url: "https://modacable.com", icon: "📺", purpose: "Fashion news, shows, and industry updates." },
+  { name: "Successful Fashion Designer", url: "https://successfulfashiondesigner.com", icon: "✂️", purpose: "Resources & guides for aspiring fashion designers." },
+  { name: "TrendHunter", url: "https://www.trendhunter.com", icon: "🔎", purpose: "Global trend spotting & consumer insights." }
+];
+
+let currentSearch = "";
+let activePopup = null;
+let scrollCloseListener = null;
+
+function initParticles() {
+  const container = document.getElementById('particleContainer');
+  if (!container) return;
+  const count = window.innerWidth < 700 ? 8 : 14;
+  for (let i = 0; i < count; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    const size = Math.random() * 24 + 6;
+    p.style.width = size + 'px';
+    p.style.height = size + 'px';
+    p.style.left = Math.random() * 100 + '%';
+    p.style.top = Math.random() * 100 + '%';
+    p.style.animationDelay = Math.random() * 12 + 's';
+    p.style.animationDuration = 10 + Math.random() * 14 + 's';
+    container.appendChild(p);
+  }
+}
+
+function safeOpenUrl(url) {
+  let finalUrl = url.trim();
+  if (!finalUrl.startsWith('http://') && !finalUrl.startsWith('https://')) finalUrl = 'https://' + finalUrl;
+  const win = window.open(finalUrl, '_blank');
+  if (win) win.opener = null;
+}
+
+function closePopup() {
+  if (activePopup) activePopup.remove();
+  activePopup = null;
+  if (scrollCloseListener) window.removeEventListener('scroll', scrollCloseListener);
+  document.removeEventListener('click', outsideClickHandler);
+}
+
+function outsideClickHandler(e) {
+  if (activePopup && !activePopup.contains(e.target)) closePopup();
+}
+
+function showLearnPopup(toolName, event) {
+  if (activePopup) closePopup();
+  const ytUrl = `https://www.youtube.com/results?search_query=${encodeURIComponent(toolName + " how to use guide")}`;
+  const googleUrl = `https://www.google.com/search?q=${encodeURIComponent(toolName + " how to use guide")}`;
+  const popup = document.createElement('div');
+  popup.className = 'simple-popup';
+  popup.innerHTML = `<div class="popup-item" data-type="yt">🎬 YouTube Tutorials</div><div class="popup-item" data-type="gg">🔍 Google Search</div>`;
+  const btn = event.target.closest('.learn-btn');
+  if (btn) {
+    const rect = btn.getBoundingClientRect();
+    let left = rect.left, top = rect.bottom + 4;
+    popup.style.left = left + 'px';
+    popup.style.top = top + 'px';
+    popup.style.transform = 'none';
+    setTimeout(() => {
+      const pr = popup.getBoundingClientRect();
+      if (pr.right > window.innerWidth) popup.style.left = window.innerWidth - pr.width - 8 + 'px';
+      if (pr.bottom > window.innerHeight) popup.style.top = rect.top - pr.height - 4 + 'px';
+    }, 0);
+  } else {
+    popup.style.left = '50%';
+    popup.style.top = '50%';
+    popup.style.transform = 'translate(-50%, -50%)';
+  }
+  popup.querySelector('[data-type="yt"]').onclick = (e) => { e.stopPropagation(); window.open(ytUrl, '_blank'); closePopup(); };
+  popup.querySelector('[data-type="gg"]').onclick = (e) => { e.stopPropagation(); window.open(googleUrl, '_blank'); closePopup(); };
+  document.body.appendChild(popup);
+  activePopup = popup;
+  scrollCloseListener = () => closePopup();
+  window.addEventListener('scroll', scrollCloseListener, { passive: true });
+  setTimeout(() => {
+    document.addEventListener('click', outsideClickHandler);
+    const esc = (e) => { if (e.key === 'Escape') closePopup(); document.removeEventListener('keydown', esc); };
+    document.addEventListener('keydown', esc);
+    popup._esc = esc;
+  }, 0);
+}
+
+function getFiltered() {
+  if (!currentSearch.trim()) return fashionTools;
+  const q = currentSearch.toLowerCase();
+  return fashionTools.filter(t => t.name.toLowerCase().includes(q) || t.purpose.toLowerCase().includes(q));
+}
+
+function renderCards() {
+  const filtered = getFiltered();
+  const container = document.getElementById('toolsContainer');
+  const statsSpan = document.getElementById('statsBar');
+  if (statsSpan) statsSpan.innerHTML = `🎯 ${filtered.length} tools • ${currentSearch ? 'filtered results' : 'curated fashion AI + trend'}`;
+  if (!filtered.length) {
+    container.innerHTML = `<div class="empty-3d">🌟 No tools found 🌟<br><span style="font-size:0.65rem;">Try a different keyword</span></div>`;
+    return;
+  }
+  let html = `<div class="tools-grid">`;
+  filtered.forEach(t => {
+    const safeName = escapeHtml(t.name);
+    const safePurpose = escapeHtml(t.purpose);
+    html += `<div class="card" data-url="${escapeAttr(t.url)}">
+      <div class="card-header"><div class="card-icon">${t.icon}</div><div class="card-name">${safeName}</div></div>
+      <div class="card-purpose">🎯 ${safePurpose}</div>
+      <div class="card-tutorial"><button class="learn-btn" data-tool="${safeName.replace(/&quot;/g, '\\"')}">📘 How to use</button></div>
+    </div>`;
+  });
+  html += `</div>`;
+  container.innerHTML = html;
+}
+
+function escapeHtml(str) {
+  return str.replace(/[&<>]/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[m]));
+}
+function escapeAttr(str) {
+  return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+function bindEvents() {
+  const container = document.getElementById('toolsContainer');
+  if (!container) return;
+  container.addEventListener('click', (e) => {
+    const card = e.target.closest('.card');
+    if (card && !e.target.closest('.learn-btn')) {
+      const url = card.getAttribute('data-url');
+      if (url) safeOpenUrl(url);
+      return;
+    }
+    const btn = e.target.closest('.learn-btn');
+    if (btn) {
+      e.stopPropagation();
+      const tool = btn.getAttribute('data-tool');
+      if (tool) showLearnPopup(tool, e);
+    }
+  });
+}
+
+function initSearch() {
+  const input = document.getElementById('search');
+  if (!input) return;
+  input.addEventListener('input', (e) => { currentSearch = e.target.value; renderCards(); });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === '/' && document.activeElement !== input) { e.preventDefault(); input.focus(); }
+    if (e.key === 'Escape') { if (activePopup) closePopup(); else input.blur(); }
+  });
+}
+
+window.addEventListener('resize', () => closePopup());
+function init() {
+  initParticles();
+  renderCards();
+  bindEvents();
+  initSearch();
+  window.addEventListener('scroll', () => closePopup(), { passive: true });
+}
+init();
+</script>
+</body>
+</html>
