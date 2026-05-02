@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<meta name="description" content="Curated directory of AI tools for fashion design, virtual try-ons, trend forecasting, and garment simulation. Powered by Lakeviya.">
-<title>Fashion AI Tools | Lakeviya</title>
+<meta name="description" content="Curated directory of AI tools, trend platforms, and official fashion brand websites for design, forecasting, and inspiration. Powered by Lakeviya.">
+<title>Fashion AI Tools + Brands | Lakeviya</title>
 <style>
   * {
     margin: 0;
@@ -311,15 +311,15 @@
 
 <div class="container">
   <div class="header">
-    <div class="glow-text">✨ Fashion AI Tools</div>
+    <div class="glow-text">✨ Fashion AI Tools + Brands</div>
     <div class="subtitle">⚡ all important tool for industry</div>
   </div>
   <div class="search-wrapper">
-    <input type="text" id="search" class="search-input" placeholder="🔍 Search tools...">
+    <input type="text" id="search" class="search-input" placeholder="🔍 Search tools, brands,">
   </div>
   <div class="stats-bar" id="statsBar">
-    <span>🤖 AI-powered fashion</span>
-    <span>⚡ Virtual try-on • 3D design</span>
+    <span>🤖 AI + Trend + Brands</span>
+    <span>⚡ 100+ fashion resources</span>
   </div>
 
   <div id="toolsContainer"></div>
@@ -328,13 +328,14 @@
     <img src="https://res.cloudinary.com/ddlc9pfgn/image/upload/v1775854808/IMG_9102_ckumgw.jpg" alt="founder Vijay Kumar" class="founder-img" onerror="this.src='https://ui-avatars.com/api/?background=8fb0d0&color=fff&name=VK'">
     <span class="founder-name">Vijay kumar</span>
     <span style="color:#9aaebf;">✦</span>
-    <span class="funded-by">💎Funded by Lakeviya</span>
+    <span class="funded-by">💎 Funded by Lakeviya</span>
   </div>
 </div>
 
 <script>
-// ========== FASHION AI + TREND + BUSINESS TOOLS ==========
+// ========== COMPLETE FASHION TOOLS + AI + BRANDS ==========
 const fashionTools = [
+  // Existing AI & trend tools
   { name: "Vue.ai", url: "https://vue.ai", icon: "👗", purpose: "AI for fashion retail: virtual try-on, styling, product recommendations." },
   { name: "CLO 3D", url: "https://www.clo3d.com", icon: "🧥", purpose: "3D garment design & simulation — used by top fashion brands." },
   { name: "StyleGAN (Fashion)", url: "https://github.com/NVlabs/stylegan", icon: "🎭", purpose: "Generate new clothing designs using generative AI." },
@@ -353,7 +354,6 @@ const fashionTools = [
   { name: "Cala", url: "https://ca.la", icon: "👜", purpose: "AI-powered fashion design & on-demand manufacturing." },
   { name: "Style.ai", url: "https://style.ai", icon: "👒", purpose: "AI outfit recommendations from your existing wardrobe." },
   { name: "The Fabricant", url: "https://www.thefabricant.com", icon: "✨", purpose: "Digital fashion & NFT clothing using AI." },
-  // NEW ADDITIONS (fashion trend, business, analysis platforms)
   { name: "Vogue Runway", url: "https://www.vogue.com/fashion-shows", icon: "📰", purpose: "Runway shows, collections, fashion week coverage & trends." },
   { name: "ShowStudio", url: "https://www.showstudio.com", icon: "🎬", purpose: "Fashion film, creative content, and behind-the-scenes." },
   { name: "Tag-Walk", url: "https://tag-walk.com", icon: "🏷️", purpose: "Street style & global fashion trends from influencers." },
@@ -373,8 +373,9 @@ const fashionTools = [
   { name: "TFashion AI", url: "https://tfashion.ai", icon: "🧠", purpose: "AI for fashion design & trend prediction." },
   { name: "ModaCable", url: "https://modacable.com", icon: "📺", purpose: "Fashion news, shows, and industry updates." },
   { name: "Successful Fashion Designer", url: "https://successfulfashiondesigner.com", icon: "✂️", purpose: "Resources & guides for aspiring fashion designers." },
-  { name: "TrendHunter", url: "https://www.trendhunter.com", icon: "🔎", purpose: "Global trend spotting & consumer insights." }
- // NEW ADDITIONS: brands & platforms (corrected typos)
+  { name: "TrendHunter", url: "https://www.trendhunter.com", icon: "🔎", purpose: "Global trend spotting & consumer insights." },
+
+  // NEW ADDITIONS: brands & platforms (corrected typos)
   { name: "Who What Wear", url: "https://www.whowhatwear.com", icon: "📖", purpose: "Fashion news, street style, and shopping inspiration." },
   { name: "InStyle", url: "https://www.instyle.com", icon: "💄", purpose: "Celebrity style, beauty, and fashion trends." },
   { name: "Printful", url: "https://www.printful.com", icon: "🖨️", purpose: "Print-on-demand & dropshipping for fashion brands." },
@@ -414,7 +415,7 @@ const fashionTools = [
   { name: "Tom Ford", url: "https://www.tomford.com", icon: "🕶️", purpose: "Luxury fashion, eyewear, and fragrances." },
   { name: "Zegna", url: "https://www.zegna.com", icon: "👔", purpose: "Italian luxury menswear & fabrics." },
   { name: "The Row", url: "https://www.therow.com", icon: "🖤", purpose: "Minimalist luxury by Mary-Kate & Ashley Olsen." },
-  { name: "Bottega Veneta", url: "https://www.bottegaveneta.com", icon: "🟫", purpose: "Intrecciato leather, understated luxury." } ,
+  { name: "Bottega Veneta", url: "https://www.bottegaveneta.com", icon: "🟫", purpose: "Intrecciato leather, understated luxury." }
 ];
 
 let currentSearch = "";
@@ -459,7 +460,7 @@ function outsideClickHandler(e) {
 
 function showLearnPopup(toolName, event) {
   if (activePopup) closePopup();
-  const ytUrl = `https://www.youtube.com/results?search_query=${encodeURIComponent(toolName + " how to use guide")}`;
+  const ytUrl = `https://www.youtube.com/results?search_query=${encodeURIComponent(toolName + " tutorial how to use")}`;
   const googleUrl = `https://www.google.com/search?q=${encodeURIComponent(toolName + " how to use guide")}`;
   const popup = document.createElement('div');
   popup.className = 'simple-popup';
@@ -505,9 +506,9 @@ function renderCards() {
   const filtered = getFiltered();
   const container = document.getElementById('toolsContainer');
   const statsSpan = document.getElementById('statsBar');
-  if (statsSpan) statsSpan.innerHTML = `🎯 ${filtered.length} tools • ${currentSearch ? 'filtered results' : 'curated fashion AI + trend'}`;
+  if (statsSpan) statsSpan.innerHTML = `🎯 ${filtered.length} resources • ${currentSearch ? 'filtered results' : 'AI + trend + brands'}`;
   if (!filtered.length) {
-    container.innerHTML = `<div class="empty-3d">🌟 No tools found 🌟<br><span style="font-size:0.65rem;">Try a different keyword</span></div>`;
+    container.innerHTML = `<div class="empty-3d">🌟 No matching fashion resource 🌟<br><span style="font-size:0.65rem;">Try a different keyword</span></div>`;
     return;
   }
   let html = `<div class="tools-grid">`;
