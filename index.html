@@ -335,47 +335,8 @@
 <script>
 // ========== COMPLETE FASHION TOOLS + AI + BRANDS ==========
 const fashionTools = [
-  // Existing AI & trend tools
-  { name: "Vue.ai", url: "https://vue.ai", icon: "👗", purpose: "AI for fashion retail: virtual try-on, styling, product recommendations." },
-  { name: "CLO 3D", url: "https://www.clo3d.com", icon: "🧥", purpose: "3D garment design & simulation — used by top fashion brands." },
-  { name: "StyleGAN (Fashion)", url: "https://github.com/NVlabs/stylegan", icon: "🎭", purpose: "Generate new clothing designs using generative AI." },
-  { name: "Zalando Research", url: "https://github.com/zalandoresearch", icon: "👚", purpose: "Open-source fashion AI: outfit generation, compatibility." },
-  { name: "Stitch Fix Algorithms", url: "https://multithreaded.stitchfix.com", icon: "📦", purpose: "Personal styling & size recommendation AI." },
-  { name: "Reface (Fashion)", url: "https://reface.ai", icon: "✨", purpose: "AI virtual try-on for clothes and accessories." },
-  { name: "Zeelool Virtual Try-On", url: "https://www.zeelool.com", icon: "🕶️", purpose: "AI based eyewear & accessory try-on." },
-  { name: "Sewport AI", url: "https://sewport.com", icon: "🧵", purpose: "AI fashion design & clothing manufacturing assistant." },
-  { name: "Fashable", url: "https://fashable.ai", icon: "👠", purpose: "AI trend forecasting & fashion analytics." },
-  { name: "Pixite (Fashion)", url: "https://pixite.ai", icon: "🎨", purpose: "Generate unique patterns & textile designs." },
-  { name: "VTON (Virtual Try-On)", url: "https://github.com/ternaus/Virtual-Try-On", icon: "👔", purpose: "Open-source virtual clothing try-on." },
-  { name: "Mei.AI", url: "https://mei.ai", icon: "💅", purpose: "AI personal shopper & style assistant." },
-  { name: "Lumiere (Google)", url: "https://lumiere-video.github.io", icon: "📽️", purpose: "AI video generation — apply to fashion lookbooks." },
-  { name: "Fashionpedia (CV)", url: "https://fashionpedia.github.io", icon: "📸", purpose: "Dataset & models for fashion item detection." },
-  { name: "Lefty (AI Stylist)", url: "https://lefty.ai", icon: "👖", purpose: "AI curates daily outfits based on weather & taste." },
-  { name: "Cala", url: "https://ca.la", icon: "👜", purpose: "AI-powered fashion design & on-demand manufacturing." },
-  { name: "Style.ai", url: "https://style.ai", icon: "👒", purpose: "AI outfit recommendations from your existing wardrobe." },
-  { name: "The Fabricant", url: "https://www.thefabricant.com", icon: "✨", purpose: "Digital fashion & NFT clothing using AI." },
-  { name: "Vogue Runway", url: "https://www.vogue.com/fashion-shows", icon: "📰", purpose: "Runway shows, collections, fashion week coverage & trends." },
-  { name: "ShowStudio", url: "https://www.showstudio.com", icon: "🎬", purpose: "Fashion film, creative content, and behind-the-scenes." },
-  { name: "Tag-Walk", url: "https://tag-walk.com", icon: "🏷️", purpose: "Street style & global fashion trends from influencers." },
-  { name: "Business of Fashion", url: "https://www.businessoffashion.com", icon: "📈", purpose: "Fashion industry news, analysis, and career insights." },
-  { name: "WWD", url: "https://wwd.com", icon: "🗞️", purpose: "Women's Wear Daily: fashion, retail, and beauty business news." },
-  { name: "WGSN", url: "https://www.wgsn.com", icon: "🔮", purpose: "Global trend forecasting & consumer insights for fashion." },
-  { name: "Edelkoort", url: "https://www.edelkoort.com", icon: "🎨", purpose: "Trend forecasting & design consultancy by Lidewij Edelkoort." },
-  { name: "Fashion United", url: "https://fashionunited.com", icon: "🌍", purpose: "International fashion news, jobs, and market data." },
-  { name: "Trendalytics", url: "https://trendalytics.co", icon: "📊", purpose: "Predictive analytics for fashion & beauty trends." },
-  { name: "Hypebae", url: "https://hypebae.com", icon: "👟", purpose: "Streetwear, sneakers, and youth fashion culture." },
-  { name: "Stylumia", url: "https://stylumia.ai", icon: "🤖", purpose: "AI-driven demand forecasting & trend intelligence." },
-  { name: "Launchmetrics", url: "https://www.launchmetrics.com", icon: "📡", purpose: "Fashion brand performance & influencer marketing analytics." },
-  { name: "Trendstop", url: "https://www.trendstop.com", icon: "⚡", purpose: "Short & long-term fashion trend forecasting." },
-  { name: "POP Fashion", url: "https://www.popfashioninfo.com", icon: "📱", purpose: "Data-driven fashion trend reports & retail insights." },
-  { name: "F-Trend", url: "https://www.f-trend.com", icon: "📉", purpose: "Fashion trend analysis & forecasting platform." },
-  { name: "FIT NYC", url: "https://www.fitnyc.edu", icon: "🎓", purpose: "Fashion Institute of Technology – research & education." },
-  { name: "TFashion AI", url: "https://tfashion.ai", icon: "🧠", purpose: "AI for fashion design & trend prediction." },
-  { name: "ModaCable", url: "https://modacable.com", icon: "📺", purpose: "Fashion news, shows, and industry updates." },
-  { name: "Successful Fashion Designer", url: "https://successfulfashiondesigner.com", icon: "✂️", purpose: "Resources & guides for aspiring fashion designers." },
-  { name: "TrendHunter", url: "https://www.trendhunter.com", icon: "🔎", purpose: "Global trend spotting & consumer insights." },
-
-  // NEW ADDITIONS: brands & platforms (corrected typos)
+  
+ // NEW ADDITIONS: brands & platforms (corrected typos)
   { name: "Who What Wear", url: "https://www.whowhatwear.com", icon: "📖", purpose: "Fashion news, street style, and shopping inspiration." },
   { name: "InStyle", url: "https://www.instyle.com", icon: "💄", purpose: "Celebrity style, beauty, and fashion trends." },
   { name: "Printful", url: "https://www.printful.com", icon: "🖨️", purpose: "Print-on-demand & dropshipping for fashion brands." },
@@ -416,9 +377,50 @@ const fashionTools = [
   { name: "Zegna", url: "https://www.zegna.com", icon: "👔", purpose: "Italian luxury menswear & fabrics." },
   { name: "The Row", url: "https://www.therow.com", icon: "🖤", purpose: "Minimalist luxury by Mary-Kate & Ashley Olsen." },
   { name: "Bottega Veneta", url: "https://www.bottegaveneta.com", icon: "🟫", purpose: "Intrecciato leather, understated luxury." }
-];
 
-let currentSearch = "";
+
+  // Existing AI & trend tools
+ { name: "Vue.ai", url: "https://vue.ai", icon: "👗", purpose: "AI for fashion retail: virtual try-on, styling, product recommendations." },
+  { name: "CLO 3D", url: "https://www.clo3d.com", icon: "🧥", purpose: "3D garment design & simulation — used by top fashion brands." },
+  { name: "StyleGAN (Fashion)", url: "https://github.com/NVlabs/stylegan", icon: "🎭", purpose: "Generate new clothing designs using generative AI." },
+  { name: "Zalando Research", url: "https://github.com/zalandoresearch", icon: "👚", purpose: "Open-source fashion AI: outfit generation, compatibility." },
+  { name: "Stitch Fix Algorithms", url: "https://multithreaded.stitchfix.com", icon: "📦", purpose: "Personal styling & size recommendation AI." },
+  { name: "Reface (Fashion)", url: "https://reface.ai", icon: "✨", purpose: "AI virtual try-on for clothes and accessories." },
+  { name: "Zeelool Virtual Try-On", url: "https://www.zeelool.com", icon: "🕶️", purpose: "AI based eyewear & accessory try-on." },
+  { name: "Sewport AI", url: "https://sewport.com", icon: "🧵", purpose: "AI fashion design & clothing manufacturing assistant." },
+  { name: "Fashable", url: "https://fashable.ai", icon: "👠", purpose: "AI trend forecasting & fashion analytics." },
+  { name: "Pixite (Fashion)", url: "https://pixite.ai", icon: "🎨", purpose: "Generate unique patterns & textile designs." },
+  { name: "VTON (Virtual Try-On)", url: "https://github.com/ternaus/Virtual-Try-On", icon: "👔", purpose: "Open-source virtual clothing try-on." },
+  { name: "Mei.AI", url: "https://mei.ai", icon: "💅", purpose: "AI personal shopper & style assistant." },
+  { name: "Lumiere (Google)", url: "https://lumiere-video.github.io", icon: "📽️", purpose: "AI video generation — apply to fashion lookbooks." },
+  { name: "Fashionpedia (CV)", url: "https://fashionpedia.github.io", icon: "📸", purpose: "Dataset & models for fashion item detection." },
+  { name: "Lefty (AI Stylist)", url: "https://lefty.ai", icon: "👖", purpose: "AI curates daily outfits based on weather & taste." },
+  { name: "Cala", url: "https://ca.la", icon: "👜", purpose: "AI-powered fashion design & on-demand manufacturing." },
+  { name: "Style.ai", url: "https://style.ai", icon: "👒", purpose: "AI outfit recommendations from your existing wardrobe." },
+  { name: "The Fabricant", url: "https://www.thefabricant.com", icon: "✨", purpose: "Digital fashion & NFT clothing using AI." },
+  { name: "Vogue Runway", url: "https://www.vogue.com/fashion-shows", icon: "📰", purpose: "Runway shows, collections, fashion week coverage & trends." },
+  { name: "ShowStudio", url: "https://www.showstudio.com", icon: "🎬", purpose: "Fashion film, creative content, and behind-the-scenes." },
+  { name: "Tag-Walk", url: "https://tag-walk.com", icon: "🏷️", purpose: "Street style & global fashion trends from influencers." },
+  { name: "Business of Fashion", url: "https://www.businessoffashion.com", icon: "📈", purpose: "Fashion industry news, analysis, and career insights." },
+  { name: "WWD", url: "https://wwd.com", icon: "🗞️", purpose: "Women's Wear Daily: fashion, retail, and beauty business news." },
+  { name: "WGSN", url: "https://www.wgsn.com", icon: "🔮", purpose: "Global trend forecasting & consumer insights for fashion." },
+  { name: "Edelkoort", url: "https://www.edelkoort.com", icon: "🎨", purpose: "Trend forecasting & design consultancy by Lidewij Edelkoort." },
+  { name: "Fashion United", url: "https://fashionunited.com", icon: "🌍", purpose: "International fashion news, jobs, and market data." },
+  { name: "Trendalytics", url: "https://trendalytics.co", icon: "📊", purpose: "Predictive analytics for fashion & beauty trends." },
+  { name: "Hypebae", url: "https://hypebae.com", icon: "👟", purpose: "Streetwear, sneakers, and youth fashion culture." },
+  { name: "Stylumia", url: "https://stylumia.ai", icon: "🤖", purpose: "AI-driven demand forecasting & trend intelligence." },
+  { name: "Launchmetrics", url: "https://www.launchmetrics.com", icon: "📡", purpose: "Fashion brand performance & influencer marketing analytics." },
+  { name: "Trendstop", url: "https://www.trendstop.com", icon: "⚡", purpose: "Short & long-term fashion trend forecasting." },
+  { name: "POP Fashion", url: "https://www.popfashioninfo.com", icon: "📱", purpose: "Data-driven fashion trend reports & retail insights." },
+  { name: "F-Trend", url: "https://www.f-trend.com", icon: "📉", purpose: "Fashion trend analysis & forecasting platform." },
+  { name: "FIT NYC", url: "https://www.fitnyc.edu", icon: "🎓", purpose: "Fashion Institute of Technology – research & education." },
+  { name: "TFashion AI", url: "https://tfashion.ai", icon: "🧠", purpose: "AI for fashion design & trend prediction." },
+  { name: "ModaCable", url: "https://modacable.com", icon: "📺", purpose: "Fashion news, shows, and industry updates." },
+  { name: "Successful Fashion Designer", url: "https://successfulfashiondesigner.com", icon: "✂️", purpose: "Resources & guides for aspiring fashion designers." },
+  { name: "TrendHunter", url: "https://www.trendhunter.com", icon: "🔎", purpose: "Global trend spotting & consumer insights." },
+ ];
+
+ let currentSearch = "";
 let activePopup = null;
 let scrollCloseListener = null;
 
